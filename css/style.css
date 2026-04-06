@@ -1,0 +1,36 @@
+/** Force footer to bottom of page **/
+body {
+    display: flex;
+    flex-direction: column;
+}
+.footer-wrapper {
+    margin-top: auto;
+}
+.page-wrapper {
+    margin-top: var(--alpha-header);
+    min-height: calc(100vh - var(--alpha-header));
+    display: flex;
+    flex-direction: column;
+}
+
+/** Defines the height and stickiness of navbar **/
+.navbar {
+    height: var(--alpha-header);
+    position: fixed;
+    padding: 1rem 0;
+    align-items: center;
+    display: flex;
+}
+
+/** controls which navbar to show based on screen width **/
+@media screen and (min-width: 768px) {
+    #mobileNav {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    #mainNav {
+        display: none !important;
+    }
+}
+
