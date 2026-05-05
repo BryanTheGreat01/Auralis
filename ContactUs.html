@@ -82,19 +82,15 @@
 
 
                 <!-- text field -->
-                <div class="col-lg-6 text-start">
-                    </br>
-                    <div class="container text-start">
-                        <div class="row">
-                            <label for="name" class="col">
-                                Name
-                            </label>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="name" aria-label="First name"
-                                placeholder="first-name">
-                            <input type="text" class="form-control" id="lname" aria-label="Last name"
-                                placeholder="last-name">
+                <form class="col-lg-6 was-validated">
+                    <div class="text-start">
+                        </br>
+                        <div class="container text-start">
+                            <label for="validationServer01" class="form-label">Name</label>
+                            <input class="form-control" id="validationServer01" placeholder="Enter your name" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid name into the empty field.
+                            </div>
                         </div>
                     </div>
                     </br>
@@ -107,9 +103,14 @@
                                 Email
                             </label>
                         </div>
-                        <div class="input-group flex-nowrap">
+
+                        <div class="input-group">
+                            <span class="input-group-text" id="email">@</span>
                             <input type="email" class="form-control" id="email" placeholder="example@email.com"
-                                aria-label="Email" aria-describedby="addon-wrapping">
+                                aria-label="Email" aria-describedby="addon-wrapping" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address into the empty field.
+                            </div>
                         </div>
                     </div>
                     </br>
@@ -117,27 +118,38 @@
                     <div class="container text-start">
                         <div class="row">
                             <label for="phone" class="col">
-                                Phone(optional)
+                                Phone
                             </label>
                         </div>
-                        <div class="input-group flex-nowrap">
+                        <div class="input-group">
+                            <span class="input-group-text" id="phone">#</span>
                             <input type="text" class="form-control" id="phone" placeholder="xxx-xxx-xxxx"
-                                aria-label="Phone" aria-describedby="addon-wrapping">
+                                aria-label="Phone" aria-describedby="addon-wrapping"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                oninput="this.value = this.value.replace(/[^0-9-]/g, '')" maxlength="10"
+                                required><!--add js -->
+                            <div class="invalid-feedback">
+                                Please enter a valid phone number into the empty field.
+                            </div>
                         </div>
                     </div>
                     </br>
 
 
                     <div class="container text-start">
+
                         <div class="row">
-                            <label for="message" class="col">
+                            <label for="Textarea" class="col">
                                 Message
                             </label>
                         </div>
-                        <div class="input-group flex-nowrap">
-                            <textarea class="form-control" id="message" style="height: 100px"
-                                placeholder="Type your message" aria-label="Message"
-                                aria-describedby="addon-wrapping"></textarea>
+
+                        <div class="input-group">
+                            <textarea class="form-control" id="Textarea"
+                                placeholder="Required example textarea" required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a message in the textarea.
+                            </div>
                         </div>
                     </div>
                     </br>
@@ -150,11 +162,14 @@
                         </div>
                     </div>
 
-                </div>
+            </div>
 
-                <footer class="container">
-                    <p>© 2017–2025 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-                </footer>
+            </form>
+
+
+            <footer class="container">
+                <p>© 2017–2025 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+            </footer>
     </main>
 
     <script src="js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
